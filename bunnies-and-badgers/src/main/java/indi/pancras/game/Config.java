@@ -16,24 +16,24 @@ public class Config {
     //图片路径
     public static final HashMap<String, String> imgPath = new HashMap<String, String>() {
         {
-            put("rabbit", "/src/main/resources/images/rabbit.png");
-            put("grass", "/src/main/resources/images/grass.png");
-            put("castle", "/src/main/resources/images/castle.png");
-            put("arrow", "/src/main/resources/images/arrow.png");
-            put("badguy", "/src/main/resources/images/badguy.png");
-            put("healthbar", "/src/main/resources/images/healthbar.png");
-            put("health", "/src/main/resources/images/health.png");
-            put("gameover", "/src/main/resources/images/gameover.jpg");
-            put("youwin", "/src/main/resources/images/youwin.png");
+            put("rabbit", "/images/rabbit.png");
+            put("grass", "/images/grass.png");
+            put("castle", "/images/castle.png");
+            put("arrow", "/images/arrow.png");
+            put("badguy", "/images/badguy.png");
+            put("healthbar", "/images/healthbar.png");
+            put("health", "/images/health.png");
+            put("gameover", "/images/gameover.jpg");
+            put("youwin", "/images/youwin.png");
         }
     };
     //音频路径
     public static final HashMap<String, String> audioPath = new HashMap<String, String>() {
         {
-            put("enemy", "/src/main/resources/audio/enemy.wav");
-            put("explode", "/src/main/resources/audio/explode.wav");
-            put("moonlight", "/src/main/resources/audio/moonlight.wav");
-            put("shoot", "/src/main/resources/audio/shoot.wav");
+            put("enemy", "/audio/enemy.wav");
+            put("explode", "/audio/explode.wav");
+            put("moonlight", "/audio/moonlight.wav");
+            put("shoot", "/audio/shoot.wav");
 
         }
     };

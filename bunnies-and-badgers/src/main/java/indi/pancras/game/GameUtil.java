@@ -1,17 +1,16 @@
 package indi.pancras.game;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
-import javax.imageio.ImageIO;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+
+import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  * 游戏工具类
@@ -51,9 +50,11 @@ public class GameUtil {
     public static void playSound(String path) {
         try {
             FileInputStream f = new FileInputStream(GameUtil.class.getResource(path).getFile());
-            AudioStream audio = new AudioStream(f);
-            AudioPlayer.player.start(audio);
-        } catch (IOException e) {
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(f);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioIn);
+            clip.start();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

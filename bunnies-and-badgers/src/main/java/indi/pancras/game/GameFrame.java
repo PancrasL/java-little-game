@@ -69,6 +69,8 @@ public class GameFrame extends Frame {
     public static void main(String[] args) {
         GameFrame frame = new GameFrame();
         frame.initGame();
+//        Image img = GameUtil.getImage("/images/arrow.png");
+//        int a= 1;
     }
 
     /**
@@ -76,7 +78,7 @@ public class GameFrame extends Frame {
      */
     public void initGame() {
         //初始化窗口
-        this.setTitle("保卫城堡");
+        this.setTitle("保卫城堡 by lpz");
         this.setVisible(true);
         this.setSize(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT);
         this.setLocation(Config.WINDOW_LOCATION);
