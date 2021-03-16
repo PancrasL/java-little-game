@@ -1,14 +1,12 @@
 package indi.pancras.game.object;
 
-import indi.pancras.game.Config;
-import indi.pancras.game.GameUtil;
-
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import indi.pancras.game.Config;
+import indi.pancras.game.GameUtil;
 
 /**
  * @author pancras
@@ -64,16 +62,14 @@ public class Pipe {
     private void createNewPipe() {
         if (count-- < 0) {
             //生成上面的管道
-            int posX = Config.FRAME_W;
-            int posY = GameUtil.randomInt(Config.FRAME_H * 0.3, Config.FRAME_H * 0.7);
             int width = DOWN_IMG.getWidth(null);
             int height = DOWN_IMG.getHeight(null);
-            pipes.add(new PipeImp(UP_IMG, posX, posY, Config.LAND_SPEED, width, height));
+
+            height = GameUtil.randomInt(50, 250);
+            pipes.add(new PipeImp(UP_IMG, Config.FRAME_W, 0, Config.LAND_SPEED, width, height));
 
             //生成下面的管道
-            posY = 0;
-            height = GameUtil.randomInt(Config.FRAME_H - height - 120, Config.FRAME_H - height - 30);
-            pipes.add(new PipeImp(DOWN_IMG, posX, posY, Config.LAND_SPEED, width, height));
+            pipes.add(new PipeImp(DOWN_IMG, Config.FRAME_W, height + GameUtil.randomInt(50, 100), Config.LAND_SPEED, width, DOWN_IMG.getHeight(null)));
 
             count = 100;
         }
